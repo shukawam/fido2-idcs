@@ -15,9 +15,9 @@ security:
   config.require-encryption: false
   properties:
     # Identity Provider - IDCS
-    idcs-uri: "https://idcs-f0017ddeef0241cfbd70e057c032ff44.identity.oraclecloud.com"
-    idcs-client-id: "1d6278e65db64a549041302e5420b43f"
-    idcs-client-secret: "788a6824-23cf-45cb-8f16-5504b95ad5d0"
+    idcs-uri: "your tenant uri"
+    idcs-client-id: "your client id"
+    idcs-client-secret: "your client secret"
     frontend-uri: "http://localhost:7987"
     proxy-host: ""
   providers:
@@ -31,7 +31,7 @@ security:
         scope-audience: "http://localhost:7987"
         proxy-host: "${security.properties.proxy-host}"
         frontend-uri: "${security.properties.frontend-uri}"
-        audience: "https://idcs-f0017ddeef0241cfbd70e057c032ff44.identity.oraclecloud.com:443"
+        audience: "${security.properties.idcs-uri}"
         # support for non-public signature JWK (and maybe other IDCS specific handling)
         server-type: "idcs"
         idcs-roles: true
